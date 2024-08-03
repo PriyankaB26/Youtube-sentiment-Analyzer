@@ -14,15 +14,15 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form  action="javascript:void(0);" class="sign-in-form">
+          <form action="/login" method="post" class="sign-in-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="id" placeholder="Youtube ID" />
+              <input type="text" name="username" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" name="password" placeholder="Password" />
             </div>
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
@@ -41,23 +41,23 @@
               </a>
             </div>
           </form>
-          <form  action="javascript:void(0);" class="sign-up-form">
+          <form action="/register" method="post" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" name="username" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="id" placeholder="Youtube ID" />
+              <input type="text" name="youtubeid" placeholder="YoutubeID" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" name="email" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" name="password" placeholder="Password" />
             </div>
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
@@ -82,10 +82,9 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>NEW HERE ?</h3>
+            <h3>New here ?</h3>
             <p>
-              Don't have an account
-              
+              Don't have an account?
             </p>
             <button class="btn transparent" id="sign-up-btn">
               Sign up
@@ -95,9 +94,9 @@
         </div>
         <div class="panel right-panel">
           <div class="content">
-            <h3>ONE OF US ?</h3>
+            <h3>One of us ?</h3>
             <p>
-              Already Registred
+              Already Registered?
             </p>
             <button class="btn transparent" id="sign-in-btn">
               Sign in
