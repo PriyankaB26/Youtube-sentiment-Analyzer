@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing_page.css') }}">
+</head>
+<body>
+    <div id="header">
+        <div id="navbar">
+            <div id="logo">ANALYSER</div>
+
+            <div id="nav-part1">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                </ul>
+            </div>
+
+            <div id="nav-part2">
+                <a href="{{ url_for('login') }}"><button id="btn1">Login</button></a>
+                <a href="{{ url_for('signup') }}"><button id="btn3">Sign Up</button></a>
+                <a href="{{ url_for('get_started') }}"><button id="start-free-trial">GET STARTED</button></a>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="hero">
+            <h1 id="line1">Boost and Enhance <br>your productivity <br> by joining us</h1>
+            <h4 id="line2">Click get started button to start your journey with us.</h4>
+            <div id="buttons">
+                <a href="{{ url_for('get_started') }}"><button id="start-free-trial">GET STARTED</button></a>
+                <button id="view-demo">VIEW DEMO</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="features">
+        <div id="animate">
+            <h3 class="animate-character">OUR FEATURES</h3>
+        </div>
+
+        <div id="features-list">
+            <div class="feature">
+                <img class="img" src="{{ url_for('static', filename='F1.png') }}" alt="Feature 1">
+                <h4>Sentiment Analysis</h4>
+            </div>
+            <div class="feature">
+                <img class="img" src="{{ url_for('static', filename='F1.png') }}" alt="Feature 2">
+                <h4>Growth</h4>
+            </div>
+            <div class="feature">
+                <img class="img" src="{{ url_for('static', filename='F1.png') }}" alt="Feature 3">
+                <h4>Title Recommendation</h4>
+            </div>
+            <div class="feature">
+                <img class="img" src="{{ url_for('static', filename='F1.png') }}" alt="Feature 4">
+                <h4>Video Summarizer</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-us">
+        <h2>About Us</h2>
+        <p>
+            Welcome to our platform! We specialize in providing advanced tools for analyzing and enhancing your content.
+            Our features are designed to help you grow and succeed in your digital endeavors. Stay tuned as we continue
+            to innovate and offer new solutions to meet your needs.
+        </p>
+    </div>
+
+    <!-- Include the external JavaScript file -->
+    <script src="{{ url_for('static', filename='landing_page.js') }}"></script>
+</body>
+</html>
