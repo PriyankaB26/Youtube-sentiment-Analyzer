@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+#logo {
+    justify-items: center;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+#nav-part1 ul {
+    list-style: none;
+   /* align-content: center;
+    justify-content: center;  */
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    gap: 4rem;
+    padding: 0;
+    margin: 0;
+}
+#nav-part1 li {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+}
+#nav-part1 li:hover {
+    /* padding: 5px 5px; 
+    background-color: #5A67D8; */
+    color: #5A67D8;
+    padding-bottom: 0px;
+    border-bottom:1px solid;
+}
+
+#nav-part2 {
+    display: flex;
+    gap: 1rem;
+}
+#btn1, #btn3 {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1.5px solid black;
+    font-size: 16px;
+    font-weight: 200;
+    color: #000;
+    background: none;
+}
+#btn2 {
+    font-weight: lighter;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #5A67D8;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+}
+
+#main {
+    background: linear-gradient(135deg, #F3F4F6, #E2E8F0);
+    padding: 4rem 2rem;
+}
+
+#hero {
+    text-align: left;
+    color: #2D3748;
+    max-width: 600px;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+#line1 {
+    font-size: 48px;
+}
+
+#line2 {
+    font-size: 22px;
+    font-weight: lighter;
+    margin-top: 1rem;
+}
+
+#buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+#start-free-trial, #view-demo {
+    font-weight: lighter;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+#start-free-trial {
+    background-color: #5A67D8;
+}
+
+#view-demo {
+    background-color: #A0AEC0;
+}
+
+#features {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #ffffff;
+}
+
+.animate-character {
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg,
+        #b3b2b9 0%,
+        #248a8f 29%,
+        #c760de 67%,
+        #fff800 100%
+    );
+    
+    background-size: 200% auto;
+    color: #ffffff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 58px;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.animate-character::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 4px solid;
+    border-image: linear-gradient(
+        -225deg,
+        #2601f4 0%,
+        #ed0707 29%,
+        #038d21 67%,
+        #fff800 100%
+    ) 1;
+    border-radius: 10px;
+    animation: borderclip 2s linear infinite;
+}
+
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes borderclip {
+    to {
+        border-image-source: linear-gradient(
+            -225deg,
+            #fff800 0%,
+            #c760de 29%,
+            #248a8f 67%,
+            #b3b2b9 100%
+        );
+    }
+}
+#animate{
+    background-color: #ffffff;
+}
+
+#features-list {
+    /* background-color: #248a8f; */
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    /* flex-wrap: wrap; */
+    margin-top: 20px;
+}
+
+.feature {
+    /* box-shadow: 10px 10px 20px rgb(118, 123, 124); */
+    color: #140d0d;
+    font-size:x-large;
+    /* background-color: #ffffff; */
+    /* padding: 20px; */
+    /* width: 320px;
+    height: 420px; */
+    border-radius: 75px;
+    text-align: center;
+}
+
+.img{
+    box-shadow: 10px 10px 20px rgb(209, 204, 204);
+    /* margin: 10px; */
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e2e4e8, #eef6ff);
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}

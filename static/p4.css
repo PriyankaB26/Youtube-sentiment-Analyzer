@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#main-body {
+    min-height: 100vh;
+    background-color: rgb(93, 82, 82);
+}
+
+#navbar {
+    border-right:1px solid black ;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 14px;
+}
+
+#logo-name {
+    display: flex;
+    align-items: center;
+}
+#logo-image {
+    display: flex;
+    justify-content: center;
+    min-width: 45px;
+    min-height: 45px;
+    background-color: rgb(6, 5, 5);
+}
+#logo-image img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.logo_name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 14px;
+}
+
+.menu-item {
+    margin-top: 180px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-item li {
+    list-style: none;
+}
+.menu-item li a {
+    height: 60px;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    position: relative;
+}
+.menu-item li a i {
+    font-size: 24px;
+    min-width: 45px;
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+.link-name {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+}
+
+.nav-links li:hover i,
+.nav-links li a:hover .link-name {
+    color: rgb(84, 218, 84);
+}
+
+.nav-links li a:hover:before {
+    position: absolute;
+    content: "";
+    left: -7px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: rgb(13, 19, 13);
+}
+
+#mode-changer {
+    display: flex;
+    align-items: center;
+}
+.mode-toggle {
+    position: absolute;
+    right: 14px;
+    height: 50px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.switch {
+    background-color: rgb(186, 186, 193);
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+.switch:before {
+    background-color: black;
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    transition: left 0.3s;
+}
+
+.sub-menu {
+    display: none;
+    padding-left: 20px;
+}
+.sub-menu li a {
+    height: 40px;
+}
+.sub-menu li a i {
+    font-size: 20px;
+}
+.sub-menu.show {
+    display: block;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: rgb(18, 18, 18);
+    color: white;
+}
+body.dark-mode #navbar {
+    background-color: rgb(33, 33, 33);
+}
+body.dark-mode .menu-item li a i {
+    color: rgb(255, 255, 255);
+}
+body.dark-mode .link-name {
+    color: rgb(255, 255, 255);
+}
+body.dark-mode .switch {
+    background-color: rgb(100, 100, 100);
+}
+body.dark-mode .switch:before {
+    left: 22px;
+    background-color: white;
+}
+
+/* code for right side of dashboard */
+.dashboard{
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100%-250px);
+    background-color: rgb(255, 255, 255);
+}
