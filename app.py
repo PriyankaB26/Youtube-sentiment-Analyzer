@@ -6,10 +6,10 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # MySQL configurations
-app.config['MYSQL_HOST'] = 'localhost:3306'
+app.config['MYSQL_HOST'] = '127.0.0.1:3306'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
-app.config['MYSQL_DB'] = 'Local instance MySQL80'
+app.config['MYSQL_DB'] = 'login_reg_db'
 
 mysql = MySQL(app)
 bcrypt = Bcrypt(app)
