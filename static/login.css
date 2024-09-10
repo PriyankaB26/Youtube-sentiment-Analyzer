@@ -6,8 +6,7 @@
   box-sizing: border-box;
 }
 
-body,
-input {
+body, input {
   font-family: "Poppins", sans-serif;
 }
 
@@ -44,7 +43,7 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0rem 5rem;
+  padding: 2rem 4rem;
   transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
@@ -52,23 +51,17 @@ form {
 }
 
 /* BACK Button */
-.back-button i{
-
+.back-button i {
   position: absolute;
-  top: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  font-size: 2rem;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
   color: #555df5;
-  text-decoration: none;
-  /* border: 2px solid #fff; */
-  padding: 0.5rem 1rem;
-  /* border-radius: 1px; */
-  transition: background-color 0.3s ease;
-  z-index: 999; /* Ensure it stays on top */
+  transition: color 0.3s ease;
 }
 
-.back-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.back-button:hover i {
+  color: #333;
 }
 
 form.sign-up-form {
@@ -81,50 +74,56 @@ form.sign-in-form {
 }
 
 .title {
-  font-size: 2.2rem;
-  color: #444;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #555df5, #00aaff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
+/* Input Field Styles */
 .input-field {
   max-width: 380px;
   width: 100%;
-  background-color: #f0f0f0;
-  margin: 10px 0;
-  height: 55px;
-  border-radius: 55px;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  padding: 0 0.4rem;
+  background-color: #f9f9f9;
+  margin: 15px 0;
+  height: 60px; /* Increased height for input fields */
+  border-radius: 30px; /* Curved corners */
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem; /* Increased padding for comfort */
   position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd; /* Subtle border for input fields */
 }
 
 .input-field i {
-  text-align: center;
-  line-height: 55px;
-  color: #acacac;
-  transition: 0.5s;
-  font-size: 1.1rem;
+  color: #555;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
 .input-field input {
+  width: 100%; /* Ensure input takes full width of the field */
   background: none;
-  outline: none;
   border: none;
-  line-height: 1;
-  font-weight: 600;
-  font-size: 1.1rem;
+  outline: none;
+  font-size: 1rem;
   color: #333;
+  font-weight: 400;
 }
 
 .input-field input::placeholder {
   color: #aaa;
-  font-weight: 500;
 }
 
 .social-text {
-  padding: 0.7rem 0;
+  padding: 1rem 0;
   font-size: 1rem;
+  color: #555;
 }
 
 .social-media {
@@ -133,17 +132,17 @@ form.sign-in-form {
 }
 
 .social-icon {
-  height: 46px;
-  width: 46px;
+  height: 40px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0.45rem;
-  color: #333;
+  margin: 0 0.5rem;
+  color: #555;
   border-radius: 50%;
-  border: 1px solid #333;
+  border: 1px solid #ddd;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: 0.3s;
 }
 
@@ -153,23 +152,30 @@ form.sign-in-form {
 }
 
 .btn {
-  width: 150px;
+  width: 160px;
   background-color: #555df5;
   border: none;
-  outline: none;
-  height: 49px;
-  border-radius: 49px;
+  height: 50px;
+  border-radius: 30px;
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 15px 0;
   cursor: pointer;
-  transition: 0.5s;
+  transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background-color:#555df5;
+  background-color: #4a4fd0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -211,12 +217,12 @@ form.sign-in-form {
 
 .left-panel {
   pointer-events: all;
-  padding: 3rem 17% 2rem 12%;
+  padding: 3rem 15% 2rem 10%;
 }
 
 .right-panel {
   pointer-events: none;
-  padding: 3rem 12% 2rem 17%;
+  padding: 3rem 10% 2rem 15%;
 }
 
 .panel .content {
@@ -227,7 +233,6 @@ form.sign-in-form {
 
 .panel h3 {
   font-weight: 600;
-  line-height: 1;
   font-size: 1.5rem;
 }
 
@@ -237,21 +242,18 @@ form.sign-in-form {
 }
 
 .btn.transparent {
-  margin: 0;
   background: none;
   border: 2px solid #fff;
-  width: 130px;
-  height: 41px;
+  width: 140px;
+  height: 45px;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .right-panel .image,
 .right-panel .content {
   transform: translateX(800px);
 }
-
-/* ANIMATION */
 
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
@@ -350,9 +352,9 @@ form.sign-in-form {
   }
 
   .btn.transparent {
-    width: 110px;
+    width: 120px;
     height: 35px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .container:before {
@@ -401,9 +403,11 @@ form.sign-in-form {
   .image {
     display: none;
   }
+  
   .panel .content {
     padding: 0.5rem 1rem;
   }
+
   .container {
     padding: 1.5rem;
   }
@@ -419,15 +423,15 @@ form.sign-in-form {
   }
 }
 
-/* flash mesaages */
-/* Example styles for flash messages */
+/* Flash messages */
 .flash-messages {
   position: fixed;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: 20%;
+  width: 25%;
+  max-width: 400px;
   text-align: center;
 }
 
@@ -444,18 +448,49 @@ form.sign-in-form {
 .alert-danger {
   background-color: #f8d7da;
   color: #721c24;
-  border-color: #f5c6cb;
+  border: 1px solid #f5c6cb;
 }
 
 .alert-danger i {
   margin-right: 8px;
-  color: #721c24;
 }
 
 .alert-success {
   background-color: #d4edda;
   color: #155724;
-  border-color: #c3e6cb;
+  border: 1px solid #c3e6cb;
+}
+
+/* Add this to your login.css */
+.password-field {
+  position: relative;
+}
+
+.password-toggle {
+  background-color: #edf4ef;
+  position: absolute;
+  right: 1rem; /* Move 2 cm left by setting a fixed position */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1rem; /* Increased size */
+  color: #e80b0b; /* Adjust color according to your theme */
+}
+
+.password-field input[type="password"] {
+  padding-right: 3rem; /* Adjust based on your icon size */
 }
 
 
+
+.forgot-password-link {
+  display: block;
+  margin-top: 1rem;
+  color: #007bff; /* Adjust color as needed */
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}

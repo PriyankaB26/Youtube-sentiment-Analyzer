@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creator Analysis</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='landing_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing_page.css') }}">
 </head>
 <body>
     <div id="header">
+        <div id="flash-container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash flash-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         <div id="navbar">
             <div id="logo">ANALYSER</div>
 
@@ -16,15 +28,23 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#about-us">About us</a></li>
-                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
                 </ul>
             </div>
 
             <div id="nav-part2">
-                <a href="{{ url_for('login') }}"><button id="btn1">Login</button></a>
-                <a href="{{ url_for('signup') }}"><button id="btn3">Sign Up</button></a>
+                <i id="theme-toggle" class="ri-moon-line"></i> <!-- Dark/Light Mode Toggle -->                
+                <!-- Conditional Rendering Based on Login Status -->
+                {% if 'user_id' in session %}
+                    <!-- If user is logged in, show email and logout -->
+                    <a href="#"><button id="user-email">{{ session['user_email'] }}</button></a>
+                    <a href="{{ url_for('logout') }}"><button id="logout">Logout</button></a>
+                {% else %}
+                    <!-- If user is not logged in, show login and signup -->
+                    <a href="{{ url_for('login') }}"><button id="btn1">Login</button></a>
+                    <a href="{{ url_for('signup') }}"><button id="btn3">Sign Up</button></a>
+                {% endif %}
                 <a href="{{ url_for('get_started') }}"><button id="start-free-trial">GET STARTED</button></a>
-
             </div>
         </div>
     </div>
@@ -33,6 +53,7 @@
         <div id="hero">
             <h1 id="line1">Boost and Enhance <br>your productivity <br> by joining us</h1>
             <h4 id="line2">Click get started button to start your journey with us.</h4>
+            
             <div id="buttons">
                 <a href="{{ url_for('get_started') }}"><button id="start-free-trial">GET STARTED</button></a>
                 <button id="view-demo">VIEW DEMO</button>

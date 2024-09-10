@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Channel Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .chart {
+            margin: 20px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube Channel Statistics</h1>
+    <div class="container">
+        <div class="chart">
+            <h2>Channel Statistics</h2>
+            <img src="data:image/png;base64,{{ channel_plots }}" alt="Channel Statistics">
+        </div>
+        <div class="chart">
+            <h2>Top 10 Videos by Views</h2>
+            <img src="data:image/png;base64,{{ top10_videos_plot }}" alt="Top 10 Videos by Views">
+        </div>
+        <div class="chart">
+            <h2>Likes vs Dislikes</h2>
+            <img src="data:image/png;base64,{{ pie_chart }}" alt="Likes vs Dislikes">
+        </div>
+        <div class="chart">
+            <h2>Number of Videos per Month</h2>
+            <img src="data:image/png;base64,{{ monthly_videos_plot }}" alt="Number of Videos per Month">
+        </div>
+    </div>
+</body>
+</html>

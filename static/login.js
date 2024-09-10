@@ -22,3 +22,35 @@ setTimeout(function() {
     setTimeout(() => flashMessages.remove(), 500); // Remove from DOM after fading out
   }
 }, 3000); // 3 seconds
+
+// Add this to your login.js
+document.addEventListener('DOMContentLoaded', function() {
+  const loginPasswordToggle = document.getElementById('login-password-toggle');
+  const signupPasswordToggle = document.getElementById('signup-password-toggle');
+  const loginPasswordField = document.getElementById('login-password');
+  const signupPasswordField = document.getElementById('signup-password');
+
+  function togglePasswordVisibility(passwordField, toggleIcon) {
+      if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+          toggleIcon.classList.remove('ri-eye-off-fill');
+          toggleIcon.classList.add('ri-eye-fill');
+      } else {
+          passwordField.type = 'password';
+          toggleIcon.classList.remove('ri-eye-fill');
+          toggleIcon.classList.add('ri-eye-off-fill');
+      }
+  }
+
+  if (loginPasswordToggle) {
+      loginPasswordToggle.addEventListener('click', function() {
+          togglePasswordVisibility(loginPasswordField, loginPasswordToggle);
+      });
+  }
+
+  if (signupPasswordToggle) {
+      signupPasswordToggle.addEventListener('click', function() {
+          togglePasswordVisibility(signupPasswordField, signupPasswordToggle);
+      });
+  }
+});
