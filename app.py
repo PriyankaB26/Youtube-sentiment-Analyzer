@@ -15,7 +15,7 @@ app.secret_key = 'your_secret_key'
 app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
-app.config['MYSQL_DB'] = 'login_reg_db'
+app.config['MYSQL_DB'] = 'user_database'
 
 mysql = MySQL(app)
 bcrypt = Bcrypt(app)
