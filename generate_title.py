@@ -31,8 +31,8 @@ def check_grammar(title):
     corrected_title = language_tool_python.utils.correct(title, matches)
     return corrected_title
 
-# Example usage
-description = "create a prompt for youtube title playing football with friends"
+# User input
+description = input("Please enter a description for generating a YouTube title: ")
 generated_title = generate_title(description)
 corrected_title = check_grammar(generated_title)
 print(f"Generated title: {corrected_title}")
