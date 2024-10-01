@@ -617,3 +617,75 @@ body.dark-mode #view-demo:hover {
     }
 }
 
+
+
+
+/* Loader Styling */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999; /* Ensures loader is above all other elements */
+}
+
+.loader-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade-out effect for the loader */
+.fade-out {
+    animation: fadeOut 1s ease-out forwards;
+}
+
+/* Keyframe for fade-out animation */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Main content hidden initially */
+#main-content {
+    display: none;
+}
+
+
+
+
+
+
+
+
+.right-section {
+    width: auto; /* Adjust width to fit the image size */
+    position: absolute;
+    right: 120px; /* Shift the image to the left */
+    top: calc(50% - 130px); /* Move the image up */
+    transform: translateY(-50%); /* Center it vertically relative to the new top position */
+    z-index: 0; /* Push the image behind the content */
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 850px; /* Adjust image size as needed */
+    height: auto;
+    border-radius: 20px; /* Add a border radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+}

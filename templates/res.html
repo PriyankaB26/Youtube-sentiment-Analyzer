@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Channel Statistics</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='res.css') }}">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <h1>YouTube Channel Statistics</h1>
+
+            <!-- Display Channel Banner -->
+            <div class="banner">
+                <img src="{{ banner_image }}" alt="Banner Image">
+            </div>
+
+            <!-- Channel Name Display -->
+            <div class="channel-name">
+                <h2>{{ channel_data['Channel_name'] }}</h2>
+            </div>
+
+            <!-- Stats Table with Profile Picture -->
+            <div class="stats-container">
+                <div class="stats-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subscribers</th>
+                                <th>Views</th>
+                                <th>Total Videos</th>
+                                <th>Created Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ channel_data['Subscribers'] }}</td>
+                                <td>{{ channel_data['Views'] }}</td>
+                                <td>{{ channel_data['Total_videos'] }}</td>
+                                <td>{{ channel_data['Created_date'] }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="profile-pic">
+                    <img src="{{ profile_pic }}" alt="Profile Picture">
+                </div>
+            </div>
+
+            <!-- Chart for Top 10 Videos by Views -->
+            <div class="chart-container">
+                <h2>Top 10 Videos by Views</h2>
+                <canvas id="top10VideosChart"></canvas>
+            </div>
+
+            <!-- Chart for Number of Videos per Month -->
+            <div class="chart-container">
+                <h2>Videos Published per Month</h2>
+                <canvas id="monthlyVideosChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Sidebar for Recent Videos -->
+        <div class="sidebar">
+            <h2>Recent Videos</h2>
+            <ul>
+                {% for video in recent_videos %}
+                <li>
+                    <div class="video-item">
+                        <img src="{{ video['Thumbnail'] }}" alt="Thumbnail">
+                        <a href="https://www.youtube.com/watch?v={{ video['Video_ID'] }}" target="_blank">{{ video['Title'] }}</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hidden JSON data for charts -->
+    <script id="top10_videos_data" type="application/json">{{ top10_videos_data | tojson }}</script>
+    <script id="monthly_videos_data" type="application/json">{{ monthly_videos_data | tojson }}</script>
+
+    <!-- JavaScript for rendering the charts -->
+    <script src="{{ url_for('static', filename='res.js') }}"></script>
+</body>
+</html>

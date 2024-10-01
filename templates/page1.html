@@ -22,7 +22,7 @@
             <div class="menu-item">
                 <ul class="nav-links">
                     <li>
-                        <a href="#" id="home-link">
+                        <a href="{{ url_for('dashboard') }}" id="home-link">
                             <i class="ri-home-4-line"></i>
                             <span class="link-name">Home</span>
                         </a>
@@ -42,21 +42,21 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="#">
+                                <a href="{{ url_for('summary') }}">
                                     <i class="ri-file-list-line"></i>
                                     <span class="link-name">Summary</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="{{ url_for('sentiment') }}">
                                     <i class="ri-emotion-line"></i>
                                     <span class="link-name">Sentiment</span>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="{{ url_for('page2') }}" class="growth-link">
                                     <i class="ri-bar-chart-line"></i>
                                     <span class="link-name">Growth</span>
                                 </a>
@@ -93,7 +93,6 @@
                             <i class="ri-moon-line"></i>
                             <span class="link-name">Dark Mode</span>
                         </a>
-
                         <div class="mode-toggle">
                             <span class="switch"></span>
                         </div>
@@ -106,17 +105,25 @@
         <div id="dashboard" class="dashboard">
             <div class="services-section"> 
                 <div class="services-container">
+
+                    <!-- Sentiment Analysis Section -->
                     <div class="service-card">
                         <i class="ri-bar-chart-line service-icon"></i>
                         <h3>Sentiment Analysis</h3>
                         <p class="large-text">Analyze and interpret emotional tone behind words.</p>
-                        <button class="learn-more-btn">Get Started1</button>
+                        <form method="POST" action="{{ url_for('dashboard') }}">
+                            <button type="submit" name="action" value="get-started-1" class="learn-more-btn">Get Started</button>
+                        </form>
                     </div>
+        
+                    <!-- Video Summarizer Section -->
                     <div class="service-card">
                         <i class="ri-video-line service-icon"></i>
                         <h3>Video Summarizer</h3>
                         <p class="large-text">Automate the process of summarizing video content.</p>
-                        <button class="learn-more-btn">Get Started2</button>
+                        <form method="POST" action="{{ url_for('dashboard') }}">
+                            <button type="submit" name="action" value="get-started-2" class="learn-more-btn">Get Started</button>
+                        </form>
                     </div>
                 </div>
             </div>

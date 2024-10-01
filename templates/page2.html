@@ -1,3 +1,6 @@
+<!-- AFTER CLICKING GET STARTED 3 (chaneel analyzer) -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +25,13 @@
             <div class="menu-item">
                 <ul class="nav-links">
                     <li>
-                        <a href="#">
+                        <a href="{{ url_for('dashboard') }}">
                             <i class="ri-home-4-line"></i>
                             <span class="link-name">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ url_for('profile') }}">
                             <i class="ri-profile-line"></i>
                             <span class="link-name">Profile</span>
                         </a>
@@ -41,7 +44,7 @@
                         <!-- Menu 2, Option of features -->
                         <ul class="sub-menu">
                             <li>
-                                <a href="#">
+                                <a href="{{ url_for('summary') }}">
                                     <i class="ri-file-list-line"></i>
                                     <span class="link-name">Summary</span>
                                 </a>
